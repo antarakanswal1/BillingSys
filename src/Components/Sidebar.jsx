@@ -2,7 +2,11 @@ import React from 'react'
 
 function Sidebar() {
   return (
-    <div>Sidebar</div>
+    <>
+    <h1>
+        hellow
+    </h1>
+    </>
   )
 }
 

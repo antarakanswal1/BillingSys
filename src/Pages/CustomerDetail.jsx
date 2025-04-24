@@ -13,10 +13,26 @@ const CustomerDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left Column */}
           <div>
-            <div className="mb-4">
-              <label className="block font-semibold mb-1">Company Name*</label>
-              <input type="text" className="w-full border px-3 py-2 rounded" placeholder="Unknown" />
-            </div>
+          <div className="flex items-center space-x-4 p-4">
+      {/* Logo Section */}
+      <div className="flex flex-col items-center">
+        <div className="text-4xl">👚</div> {/* Replace with your logo or <img src="..." /> */}
+        <button className="text-red-600 text-sm mt-2 hover:underline">Remove Logo</button>
+      </div>
+
+      {/* Input Section */}
+      <div className="flex flex-col">
+        <label htmlFor="companyName" className="text-sm font-medium text-gray-700 mb-1">
+          Company Name<span className="text-red-500">*</span>
+        </label>
+        <input
+          id="companyName"
+          type="text"
+          placeholder="Unknown"
+          className="w-full border rounded-md px-3 py-2 text-sm text-gray-500 w-64"
+        />
+      </div>
+    </div>
             <div className="mb-4">
               <label className="block font-semibold mb-1">Company Phone No.*</label>
               <input type="text" className="w-full border px-3 py-2 rounded" placeholder="Company Phone No." />

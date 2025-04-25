@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import CustomerDetail from './Pages/CustomerDetail';
 import CustomerDetail2 from './Pages/CustomerDetail2';
+import CustomerInfo from './Pages/CustomerInfo';
 import Dashboard from './Pages/Dashboard';
 import LoginPage from './Pages/LoginPage';
 import LoginPage2 from './Pages/LoginPage2';
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   { path: "/dashboard", element: <Dashboard /> },
   { path: "/", element: <LoginPage /> },
   { path: "/loginpage2", element: <LoginPage2 /> },
+  { path: "/customerinfo", element: <CustomerInfo /> },
 ]);
 
 function App() {

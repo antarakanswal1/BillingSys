@@ -10,6 +10,8 @@ import SignUp from './Pages/SignUp';
 import Login from './Pages/Login';
 import InventoryPage from './Pages/InventoryPage';
 import CustomerPage from './Pages/CustomerPage';
+import ProductPurchase from './Pages/ProductPurchase';
+import Sidebar2 from './Components/Sidebar2';
 
 const router = createBrowserRouter([
   { path: "/customerdetail", element: <CustomerDetail /> },
@@ -20,6 +22,8 @@ const router = createBrowserRouter([
   { path: "/customerinfo", element: <CustomerInfo /> },
   { path: "/inventorypage", element: <InventoryPage /> },
   { path: "/customerpage", element: <CustomerPage /> },
+  {path: "/ProductPurchase", element: <ProductPurchase/>},
+  {path: "/Sidebar2", element: <Sidebar2/>}
 ]);
 
 function App() {

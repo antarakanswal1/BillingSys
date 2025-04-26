@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import AddCustomerModal from "./AddCustomerModal"
+import AddCustomerModal from "./AddCustomerModal";
 import {
   faTrash,
   faEllipsisV,
@@ -8,30 +8,57 @@ import {
   faPlus,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
+import Sidebar from "../Components/Sidebar";
 
 // Dummy customers
 const customersList = [
-  { name: "Rishu Rawat", email: "rr889985@gmail.com", phone: "7895613233", address: "KhandGaon, Rishikesh" },
-  { name: "Robert Fox", email: "robert@example.com", phone: "7895613233", address: "KhandGaon, Rishikesh" },
-  { name: "Jane Cooper", email: "jane@example.com", phone: "7895613233", address: "KhandGaon, Rishikesh" },
-  { name: "Wade Warren", email: "wade@example.com", phone: "7895613233", address: "KhandGaon, Rishikesh" },
-  { name: "Esther Howard", email: "esther@example.com", phone: "7895613233", address: "KhandGaon, Rishikesh" },
+  {
+    name: "Rishu Rawat",
+    email: "rr889985@gmail.com",
+    phone: "7895613233",
+    address: "KhandGaon, Rishikesh",
+  },
+  {
+    name: "Robert Fox",
+    email: "robert@example.com",
+    phone: "7895613233",
+    address: "KhandGaon, Rishikesh",
+  },
+  {
+    name: "Jane Cooper",
+    email: "jane@example.com",
+    phone: "7895613233",
+    address: "KhandGaon, Rishikesh",
+  },
+  {
+    name: "Wade Warren",
+    email: "wade@example.com",
+    phone: "7895613233",
+    address: "KhandGaon, Rishikesh",
+  },
+  {
+    name: "Esther Howard",
+    email: "esther@example.com",
+    phone: "7895613233",
+    address: "KhandGaon, Rishikesh",
+  },
 ];
 
 export default function CustomerPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredCustomers = customersList.filter((customer) =>
-    customer.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    customer.email.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredCustomers = customersList.filter(
+    (customer) =>
+      customer.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      customer.email.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="flex h-screen">
       {/* Sidebar Placeholder */}
       {/* Replace with your actual Sidebar component if available */}
-      {/* <Sidebar /> */}
+      <Sidebar/>
 
       {/* Main Content */}
       <main className="flex-1 bg-white p-8 overflow-y-auto">
@@ -43,7 +70,10 @@ export default function CustomerPage() {
           >
             <FontAwesomeIcon icon={faPlus} className="mr-2" /> Add Customer
           </button>
-          {isModalOpen && <AddCustomerModal />}
+
+          {isModalOpen && (
+            <AddCustomerModal onClose={() => setIsModalOpen(false)} />
+          )}
         </div>
 
         <div className="mb-6">

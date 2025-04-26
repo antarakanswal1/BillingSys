@@ -9,7 +9,7 @@ import Dashboard from './Pages/Dashboard';
 import SignUp from './Pages/SignUp';
 import Login from './Pages/Login';
 import InventoryPage from './Pages/InventoryPage';
-import CustomerPage from './Pages/CustomerInfo';
+import CustomerPage from './Pages/CustomerPage';
 
 const router = createBrowserRouter([
   { path: "/customerdetail", element: <CustomerDetail /> },

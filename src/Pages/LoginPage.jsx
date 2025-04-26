@@ -6,7 +6,7 @@ export default function LoginSignup() {
   const [showRightPanel, setShowRightPanel] = useState(true);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-[#F9FAFB]">
       <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg flex overflow-hidden">
         {/* Left Side - Login */}
         <div className="w-full md:w-1/2 p-10">
@@ -18,7 +18,7 @@ export default function LoginSignup() {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-10 h-10 text-blue-600"
+                className="w-10 h-10 text-[#0F2657] "
               >
                 <path
                   strokeLinecap="round"
@@ -28,7 +28,7 @@ export default function LoginSignup() {
               </svg>
             </div>
             
-            <h1 className="text-2xl font-bold text-blue-700 mb-2">Inventor</h1>
+            <h1 className="text-2xl font-bold text-[#0F2657]  mb-2">Inventor</h1>
             <p className="text-gray-500 text-sm mb-6">welcome back! please enter your details.</p>
 
             <input
@@ -52,17 +52,17 @@ export default function LoginSignup() {
 
         {/* Right Side - Sign Up Prompt */}
         {showRightPanel && (
-          <div className="hidden md:flex flex-col justify-between bg-blue-900 text-white p-10 relative w-1/2">
+          <div className="hidden md:flex flex-col justify-between bg-[#0F2657] text-white p-10 relative w-1/2">
             <button
               className="absolute top-4 right-4 text-white hover:text-red-400"
               onClick={() => setShowRightPanel(false)}
             >
               <FontAwesomeIcon icon={faTimes} className="h-6 w-6" />
             </button>
-            <div>
-              <h2 className="text-2xl font-bold mb-2">New here?</h2>
-              <p className="mb-6">Create your company account</p>
-              <button className="bg-white text-blue-900 py-2 px-6 rounded hover:bg-gray-200">
+            <div className="mt-9">
+              <h2 className="text-2xl font-bold mb-2 mt-9 text-center">New here?</h2>
+              <p className="mb-6 text-xl text-center">Create your company account</p>
+              <button className="bg-white text-[#0F2657] block mx-auto font-bold py-2 px-6 rounded hover:bg-gray-200">
                 Sign Up
               </button>
             </div>

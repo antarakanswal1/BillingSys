@@ -10,124 +10,86 @@ const CustomerDetail = () => {
       </div>
 
       {/* Form Container */}
-      <div className="max-w-6xl mx-auto bg-white shadow-md rounded-lg p-4 sm:p-6 mt-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Left Column */}
-          <div>
-            {/* Logo and Company Name */}
-            <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-4">
-              <div className="flex flex-col items-center">
-                <div className="text-4xl">👚</div>
-                <button className="text-red-600 text-sm mt-2 hover:underline">Remove Logo</button>
+      <div className="flex-1 overflow-auto bg-gray-100 p-4 md:p-8 flex items-center justify-center">
+          <div className="bg-white p-6 md:p-10 rounded-2xl shadow-md w-full max-w-7xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              {/* Left Side */}
+              <div className="flex flex-col gap-4">
+                {/* Logo and Remove */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
+                    <span className="text-gray-400 text-sm">Logo</span>
+                  </div>
+                  <button className="text-red-500 text-sm font-semibold">Remove Logo</button>
+                </div>
+
+                {/* Inputs */}
+                <input type="text" placeholder="Company Name*" className="w-full border border-gray-300 rounded-xl p-3 text-sm" />
+                
+                <div className="flex flex-col md:flex-row gap-4">
+                  <input type="text" placeholder="Company Phone No." className="w-full border border-gray-300 rounded-xl p-3 text-sm" />
+                  <input type="email" placeholder="Company Email*" className="w-full border border-gray-300 rounded-xl p-3 text-sm" />
+                </div>
+
+                <input type="password" placeholder="Password*" className="w-full border border-gray-300 rounded-xl p-3 text-sm" />
+                <input type="text" placeholder="Billing Address*" className="w-full border border-gray-300 rounded-xl p-3 text-sm" />
+
+                <div className="flex flex-col md:flex-row gap-4">
+                  <input type="text" placeholder="State*" className="w-full border border-gray-300 rounded-xl p-3 text-sm" />
+                  <input type="text" placeholder="Pincode*" className="w-full border border-gray-300 rounded-xl p-3 text-sm" />
+                </div>
+
+                <input type="text" placeholder="City*" className="w-full border border-gray-300 rounded-xl p-3 text-sm" />
+
+                {/* GST Registered */}
+                <div className="space-y-2">
+                  <label className="block text-sm font-semibold text-gray-700">Are You GST Registered?*</label>
+                  <div className="flex space-x-4">
+                    <button className="px-6 py-2 bg-blue-600 text-white rounded-full text-sm">Yes</button>
+                    <button className="px-6 py-2 border border-gray-300 rounded-full text-gray-700 text-sm hover:bg-gray-200">No</button>
+                  </div>
+                </div>
+
+                <input type="text" placeholder="GSTIN*" className="w-full border border-gray-300 rounded-xl p-3 text-sm" />
+                <input type="text" placeholder="PAN Number*" className="w-full border border-gray-300 rounded-xl p-3 text-sm" />
+
+                {/* e-Invoice */}
+                <div className="flex items-center justify-between mt-2">
+                  <span className="text-sm font-semibold text-gray-700">Enable e-Invoice</span>
+                  <label className="inline-flex items-center cursor-pointer">
+                    <input type="checkbox" className="sr-only peer" />
+                    <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 relative transition">
+                      <div className="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition peer-checked:translate-x-5"></div>
+                    </div>
+                  </label>
+                </div>
               </div>
 
-              <div className="w-full sm:w-2/3">
-                <label htmlFor="companyName" className="text-sm font-medium text-gray-700 mb-1 block">
-                  Company Name<span className="text-red-500">*</span>
-                </label>
-                <input
-                  id="companyName"
-                  type="text"
-                  placeholder="Unknown"
-                  className="w-full border rounded-md px-3 py-2 text-sm text-gray-500"
-                />
-              </div>
-            </div>
+              {/* Right Side */}
+              <div className="flex flex-col gap-4">
+                <input type="text" placeholder="Business Type*" className="w-full border border-gray-300 rounded-xl p-3 text-sm" />
+                <input type="text" placeholder="Industrial Type*" className="w-full border border-gray-300 rounded-xl p-3 text-sm" />
+                <input type="text" placeholder="Business Registration Type" className="w-full border border-gray-300 rounded-xl p-3 text-sm" />
+                <textarea placeholder="Terms & Conditions" rows="5" className="w-full border border-gray-300 rounded-xl p-3 text-sm resize-none"></textarea>
 
-            {/* Form Inputs */}
-            {[
-              { label: 'Company Phone No.*', type: 'text', placeholder: 'Company Phone No.' },
-              { label: 'Company Email*', type: 'email', placeholder: 'Company Email' },
-              { label: 'Billing Address*', type: 'text', placeholder: '7529 E. Pecan St.' },
-              { label: 'GSTIN*', type: 'text', placeholder: 'RTOF88FJFHKFHSKIF' },
-              { label: 'PAN Number*', type: 'text', placeholder: 'RTOF88FJFHKFHSKIF' },
-            ].map((input, index) => (
-              <div className="mb-4" key={index}>
-                <label className="block font-semibold mb-1">{input.label}</label>
-                <input
-                  type={input.type}
-                  className="w-full border px-3 py-2 rounded"
-                  placeholder={input.placeholder}
-                />
-              </div>
-            ))}
+                {/* Signature Upload */}
+                <div className="space-y-2">
+                  <label className="block text-sm font-semibold text-gray-700">Signature*</label>
+                  <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 flex flex-col items-center justify-center text-gray-400">
+                    <input type="file" accept="image/*" id="signature" className="hidden" />
+                    <label htmlFor="signature" className="cursor-pointer text-blue-600 font-semibold">Browse...</label>
+                    <p className="text-xs mt-2">(supported logo extensions .jpeg/.jpg/.png Only)</p>
+                  </div>
+                </div>
 
-            {/* Password */}
-            <div className="mb-2">
-              <label className="block font-semibold mb-1">Password*</label>
-              <input type="password" className="w-full border px-3 py-2 rounded" />
-              <p className="text-red-500 text-sm">Note: password should be 8 to 15 characters.....</p>
-            </div>
-
-            {/* Address Details */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-              <div>
-                <label className="block font-semibold mb-1">State*</label>
-                <input type="text" className="w-full border px-3 py-2 rounded" placeholder="Uttarakhand" />
+                {/* Update Button */}
+              
               </div>
-              <div>
-                <label className="block font-semibold mb-1">Pincode*</label>
-                <input type="text" className="w-full border px-3 py-2 rounded" placeholder="249201" />
-              </div>
-              <div>
-                <label className="block font-semibold mb-1">City*</label>
-                <input type="text" className="w-full border px-3 py-2 rounded" placeholder="Rishikesh" />
-              </div>
-            </div>
 
-            {/* GST Registered */}
-            <div className="mb-4">
-              <label className="block font-semibold mb-2">Are You GST Registered?*</label>
-              <div className="flex gap-4 flex-wrap">
-                <button className="bg-blue-600 text-white px-4 py-2 rounded">Yes</button>
-                <button className="bg-gray-200 px-4 py-2 rounded">No</button>
-              </div>
-            </div>
-
-            {/* e-Invoice Toggle */}
-            <div className="flex items-center gap-2">
-              <label className="block font-semibold">Enable e-Invoice</label>
-              <input type="checkbox" className="form-checkbox h-5 w-5 text-blue-600" />
-            </div>
-          </div>
-
-          {/* Right Column */}
-          <div>
-            {[
-              { label: 'Business Type*', placeholder: 'Finance etc...' },
-              { label: 'Industrial Type*', placeholder: 'Finance etc...' },
-              { label: 'Business Registration Type', placeholder: 'Finance etc...' },
-            ].map((input, index) => (
-              <div className="mb-4" key={index}>
-                <label className="block font-semibold mb-1">{input.label}</label>
-                <input
-                  type="text"
-                  className="w-full border px-3 py-2 rounded"
-                  placeholder={input.placeholder}
-                />
-              </div>
-            ))}
-
-            {/* Terms */}
-            <div className="mb-4">
-              <label className="block font-semibold mb-1">Terms & Conditions</label>
-              <textarea
-                className="w-full border px-3 py-2 rounded"
-                placeholder="terms and conditions"
-              />
-            </div>
-
-            {/* Signature Upload */}
-            <div className="mb-4">
-              <label className="block font-semibold mb-1">Signature*</label>
-              <div className="border-dashed border-2 border-gray-300 rounded p-4 flex flex-col items-center justify-center h-32">
-                <input type="file" className="mb-2" accept="image/jpeg,image/jpg,image/png" />
-                <small className="text-gray-500">(Supported logo extensions: .jpeg, .jpg, .png only)</small>
-              </div>
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 };

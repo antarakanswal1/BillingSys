@@ -6,7 +6,7 @@ const CustomerDetail2 = () => {
     <div className="min-h-screen bg-gray-100 p-4">
       {/* Header */}
       <div className="w-full border border-black h-20 bg-[#0F2657] flex flex-col sm:flex-row justify-end items-center px-4 gap-2">
-        <button className="px-4 py-2 rounded border border-white text-white">Go Back</button>
+        <a href="/dashboard"><button className="px-4 py-2 rounded border border-white text-white">Go Back</button></a>
         <button className="bg-white text-black px-4 py-2 rounded">Save & Next</button>
       </div>
 

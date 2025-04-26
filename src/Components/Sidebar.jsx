@@ -3,10 +3,10 @@ import { LogOut, UserCircle2 } from 'lucide-react';
 
 function Sidebar() {
     return (
-        <div className="bg-[#0b1f4e] text-white w-64 min-h-screen flex flex-col justify-between">
+        <div className="bg-[#0b1f4e] text-white w-64 min-h-screen flex flex-col justify-between h-183">
             <div>
                 {/* Top Profile Section */}
-                <div className="flex items-center gap-2 px-4 py-6 border-b border-white/10">
+                <div className="flex items-center px-4 py-6 border-b border-white/10">
                     <UserCircle2 size={32} />
                     <div className="text-sm leading-tight">
                         <p className="font-semibold">Shree Kaushal Prem</p>

@@ -17,7 +17,7 @@ function Sidebar() {
                 <nav className="mt-4 space-y-2 px-4">
                     <a href="/dashboard"><NavItem label="Dashboard" /></a>
                     <a href="/customerinfo"><NavItem label="customer" /></a>
-                    <a href="/inventory"><NavItem label="inventory" /></a>
+                    <a href="/inventorypage"><NavItem label="inventory" /></a>
                     <a href=""><NavItem label="Settings" /></a>
                 </nav>
             </div>

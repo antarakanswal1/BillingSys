@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
-export default function LoginSignup() {
+export default function Signup() {
   const [showRightPanel, setShowRightPanel] = useState(true);
 
   return (

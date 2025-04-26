@@ -8,6 +8,8 @@ import CustomerInfo from './Pages/CustomerInfo';
 import Dashboard from './Pages/Dashboard';
 import LoginPage from './Pages/LoginPage';
 import LoginPage2 from './Pages/LoginPage2';
+import InventoryPage from './Pages/InventoryPage';
+import CustomerPage from './Pages/CustomerInfo';
 
 const router = createBrowserRouter([
   { path: "/customerdetail", element: <CustomerDetail /> },
@@ -16,6 +18,8 @@ const router = createBrowserRouter([
   { path: "/", element: <LoginPage /> },
   { path: "/loginpage2", element: <LoginPage2 /> },
   { path: "/customerinfo", element: <CustomerInfo /> },
+  { path: "/inventorypage", element: <InventoryPage /> },
+  { path: "/customerpage", element: <CustomerPage /> },
 ]);
 
 function App() {

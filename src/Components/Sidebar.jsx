@@ -18,7 +18,7 @@ function Sidebar() {
                     <a href="/dashboard"><NavItem label="Dashboard" /></a>
                     <a href="/customerinfo"><NavItem label="customer" /></a>
                     <a href="/inventorypage"><NavItem label="inventory" /></a>
-                    <a href="/customerdetail"><NavItem label="Settings" /></a>
+                    <a href="/customerpage"><NavItem label="Settings" /></a>
                 </nav>
             </div>
 

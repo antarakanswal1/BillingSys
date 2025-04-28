@@ -11,6 +11,7 @@ import Login from './Pages/Login';
 import InventoryPage from './Pages/InventoryPage';
 import CustomerPage from './Pages/CustomerPage';
 import ProductPurchase from './Pages/ProductPurchase';
+import BillInvoice from './Pages/BillInvoice';
 import Sidebar2 from './Components/Sidebar2';
 
 const router = createBrowserRouter([
@@ -22,7 +23,8 @@ const router = createBrowserRouter([
   { path: "/customerinfo", element: <CustomerInfo /> },
   { path: "/inventorypage", element: <InventoryPage /> },
   { path: "/customerpage", element: <CustomerPage /> },
-  {path: "/ProductPurchase", element: <ProductPurchase/>},
+  {path: "/productpurchase", element: <ProductPurchase/>},
+  {path: "/billinvoice", element: <BillInvoice/>},
   {path: "/Sidebar2", element: <Sidebar2/>}
 ]);
 

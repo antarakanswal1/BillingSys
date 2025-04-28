@@ -1,6 +1,5 @@
-import React from 'react'
-import { Pencil, Trash2 } from "lucide-react";
-import { MoreHorizontal } from 'lucide-react';
+import React, { useState } from 'react'
+import { Pencil, Trash2, MoreHorizontal } from "lucide-react";
 import Sidebar from '../Components/Sidebar';
 
 const inventoryItems = [
@@ -19,6 +18,8 @@ const statusClasses = {
 };
 
 const InventoryPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       <div className='flex h-screen'>
@@ -31,7 +32,10 @@ const InventoryPage = () => {
             {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
               <h1 className="text-xl sm:text-2xl font-bold text-gray-800">Inventory</h1>
-              <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm sm:text-base">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm sm:text-base"
+              >
                 Add Item
               </button>
             </div>
@@ -93,6 +97,52 @@ const InventoryPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal with Blur Background */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/30 backdrop-blur-sm">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+            <h2 className="text-xl font-semibold mb-4">Add New Item</h2>
+            <form className="flex flex-col gap-4">
+              <input
+                type="text"
+                placeholder="Item Name"
+                className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="text"
+                placeholder="Category"
+                className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="number"
+                placeholder="Stock Quantity"
+                className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="number"
+                placeholder="Price (₹)"
+                className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div className="flex justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(false)}
+                  className="px-4 py-2 border rounded text-gray-700 hover:bg-gray-100"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                >
+                  Add
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 };

@@ -45,7 +45,7 @@ export default function Signup() {
               Forgot Password?
             </div>
             <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
-              Sign in
+              <a href="/dashboard">Sign In</a>
             </button>
           </div>
         </div>

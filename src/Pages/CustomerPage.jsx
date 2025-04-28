@@ -109,7 +109,7 @@ const CustomerPage = () => {
             </div>
 
             {/* Business Info */}
-            <div className="flex flex-col space-y-6 border rounded-xl p-6">
+            <div className="flex flex-col space-y-6 border rounded-xl p-6 ">
 
               {/* Business Type */}
               <div>

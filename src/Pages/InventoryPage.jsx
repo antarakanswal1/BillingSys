@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Pencil, Trash2, MoreHorizontal } from "lucide-react";
 import Sidebar from '../Components/Sidebar';
 
@@ -22,12 +22,14 @@ const InventoryPage = () => {
 
   return (
     <>
-      <div className='flex h-screen'>
+      <div className="flex h-screen overflow-hidden">
         {/* Sidebar */}
-        <Sidebar />
+        <div className="hidden md:block">
+          <Sidebar />
+        </div>
 
         {/* Main Content */}
-        <div className="p-4 sm:p-6 bg-gray-50 min-h-screen w-full">
+        <div className="flex-1 p-4 sm:p-6 bg-gray-50 overflow-y-auto">
           <div className="max-w-7xl mx-auto bg-white p-4 sm:p-6 rounded-lg shadow-md">
             {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
@@ -50,15 +52,17 @@ const InventoryPage = () => {
             </div>
 
             {/* Table */}
-            <div className="overflow-x-auto border-b-0 rounded-md border border-gray-300">
+            <div className="overflow-x-auto">
               <div className="flex items-center justify-between p-4">
-                <h1 className="text-lg font-semibold text-gray-900">All Items</h1>
+                <h2 className="text-lg font-semibold text-gray-900">All Items</h2>
                 <button className="p-2 rounded-md border border-gray-300 hover:bg-gray-100">
                   <MoreHorizontal className="h-5 w-5 text-gray-600" />
                 </button>
               </div>
-              <table className="min-w-full bg-white text-sm sm:text-base bg-gray-50">
-                <thead>
+
+              {/* Responsive Table */}
+              <table className="min-w-full bg-white text-sm sm:text-base">
+                <thead className="bg-gray-100 hidden sm:table-header-group">
                   <tr className="text-gray-700">
                     <th className="text-left py-3 px-4">Item ID</th>
                     <th className="text-left py-3 px-4">Item Name</th>
@@ -70,18 +74,30 @@ const InventoryPage = () => {
                 </thead>
                 <tbody>
                   {inventoryItems.map((item, idx) => (
-                    <tr key={idx} className="hover:bg-gray-50">
-                      <td className="py-3 px-4">{item.id}</td>
-                      <td className="py-3 px-4 flex items-center gap-2">
+                    <tr
+                      key={idx}
+                      className="flex flex-col sm:table-row border-b sm:border-none mb-4 sm:mb-0 p-4 sm:p-0 bg-gray-50 sm:bg-transparent rounded-lg sm:rounded-none"
+                    >
+                      <td className="py-2 px-2 sm:py-3 sm:px-4 font-semibold">
+                        <span className="sm:hidden font-bold">Item ID: </span> {item.id}
+                      </td>
+                      <td className="py-2 px-2 sm:py-3 sm:px-4 flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span className="sm:hidden font-bold">Item Name: </span> 
                         {item.name}
                         <span className={`text-xs px-2 py-1 rounded-full ${statusClasses[item.status]}`}>
                           {item.status}
                         </span>
                       </td>
-                      <td className="py-3 px-4">{item.category}</td>
-                      <td className="py-3 px-4">{item.stock}</td>
-                      <td className="py-3 px-4">₹{item.price}</td>
-                      <td className="py-3 px-4 flex gap-3">
+                      <td className="py-2 px-2 sm:py-3 sm:px-4">
+                        <span className="sm:hidden font-bold">Category: </span> {item.category}
+                      </td>
+                      <td className="py-2 px-2 sm:py-3 sm:px-4">
+                        <span className="sm:hidden font-bold">Stock: </span> {item.stock}
+                      </td>
+                      <td className="py-2 px-2 sm:py-3 sm:px-4">
+                        <span className="sm:hidden font-bold">Price: </span> ₹{item.price}
+                      </td>
+                      <td className="py-2 px-2 sm:py-3 sm:px-4 flex gap-3">
                         <button className="text-blue-500 hover:text-blue-700">
                           <Pencil size={18} />
                         </button>
@@ -98,9 +114,9 @@ const InventoryPage = () => {
         </div>
       </div>
 
-      {/* Modal with Blur Background */}
+      {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/30 backdrop-blur-sm">
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/30 backdrop-blur-sm p-4">
           <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
             <h2 className="text-xl font-semibold mb-4">Add New Item</h2>
             <form className="flex flex-col gap-4">
